@@ -73,8 +73,7 @@ export function BookingForm() {
         description: `Consultation request from ${user?.email}`,
         start: { dateTime: startDateTime.toISOString() },
         end: { dateTime: endDateTime.toISOString() },
-        attendees: [{ email: 'info@technixar.com' }],
-        sendNotifications: true
+        attendees: [{ email: 'info@technixar.com' }]
       };
 
       const res = await fetch("https://www.googleapis.com/calendar/v3/calendars/primary/events?sendUpdates=all", {

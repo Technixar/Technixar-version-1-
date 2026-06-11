@@ -1,0 +1,6 @@
+{
+  "name": "Technixar",
+  "description": "Technixar is a Singapore-based technology consulting and software development company specializing in custom software development, fintech solutions, cloud infrastructure, AI automation, enterprise applications, digital transformation, and mobile app development.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

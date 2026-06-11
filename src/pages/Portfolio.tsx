@@ -59,7 +59,7 @@ export default function Portfolio() {
                         />
                     </div>
                 )}
-                <div className={`p-8 flex flex-col flex-1 ${!proj.image && 'pt-24'}`}>
+                <div className={`p-8 flex flex-col flex-1 ${!proj.image ? 'pt-24' : ''}`}>
                     <div className="flex justify-between items-start mb-6">
                         <span className="bg-gray-100 text-charcoal text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                             {proj.category}

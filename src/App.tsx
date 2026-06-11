@@ -11,7 +11,6 @@ import Services from "./pages/Services";
 import Industries from "./pages/Industries";
 import Technologies from "./pages/Technologies";
 import Portfolio from "./pages/Portfolio";
-import Insights from "./pages/Insights";
 import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
@@ -25,7 +24,6 @@ const router = createBrowserRouter([
       { path: "industries", element: <Industries /> },
       { path: "technologies", element: <Technologies /> },
       { path: "portfolio", element: <Portfolio /> },
-      { path: "insights", element: <Insights /> },
       { path: "contact", element: <Contact /> },
     ],
   },

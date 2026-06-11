@@ -45,10 +45,9 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Insights</h3>
+            <h3 className="text-lg font-semibold mb-4">Resources</h3>
             <ul className="flex flex-col gap-3 text-sm text-gray-400">
               <li><Link to="/portfolio" className="hover:text-primary-yellow transition-colors">Portfolio</Link></li>
-              <li><Link to="/insights" className="hover:text-primary-yellow transition-colors">Blog</Link></li>
               <li><Link to="/contact" className="hover:text-primary-yellow transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -67,7 +66,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} Technixar Pte. Ltd. All rights reserved.
+            &copy; 2024 Technixar IT Solutions Pte. Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm text-gray-500">
             <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>

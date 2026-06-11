@@ -11,7 +11,6 @@ const NAV_LINKS = [
   { name: "Industries", path: "/industries" },
   { name: "Technologies", path: "/technologies" },
   { name: "Portfolio", path: "/portfolio" },
-  { name: "Insights", path: "/insights" },
   { name: "Contact", path: "/contact" },
 ];
 

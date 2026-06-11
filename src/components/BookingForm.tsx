@@ -41,10 +41,14 @@ export function BookingForm() {
     } catch (err: any) {
       console.error('Login failed:', err);
       // Fallback for platform error handling where config fails
-      if (err.message.includes("Firebase not properly configured")) {
+      if (err.message?.includes("Firebase not properly configured")) {
         setError("Firebase configuration is missing or invalid. Please check your setup.");
+      } else if (err.code === 'auth/unauthorized-domain') {
+        setError("This domain is not authorized for OAuth. Wait a moment or open in a new tab.");
+      } else if (err.code === 'auth/popup-closed-by-user' || err.message?.includes('popup')) {
+        setError("Popup was closed or blocked. Please open the app in a new tab and try again.");
       } else {
-        setError("Could not sign in with Google. Please try again.");
+        setError(`Could not sign in with Google: ${err.message || 'Unknown error'}`);
       }
     } finally {
       setIsLoggingIn(false);

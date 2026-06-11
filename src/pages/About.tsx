@@ -2,12 +2,24 @@ import { CtaSection } from "@/components/CtaSection";
 import * as motion from "motion/react-client";
 import { CheckCircle } from "lucide-react";
 
+import aboutImage from '@/assets/images/about_company_office_1781162784450.png';
+
 export default function About() {
   return (
     <div className="w-full">
       {/* Header */}
-      <section className="bg-charcoal text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-charcoal text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src={aboutImage}
+            alt="Corporate Environment"
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-charcoal/80 mix-blend-multiply"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,28 +78,38 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-gray-50 rounded-3xl p-10 lg:p-12 border border-gray-100 shadow-sm"
+            className="bg-gray-50 rounded-3xl overflow-hidden border border-gray-100 shadow-sm"
           >
-            <h3 className="text-2xl font-bold mb-8 text-charcoal">Core Values</h3>
-            <ul className="space-y-6">
-              {[
-                { title: "Innovation", desc: "Pushing boundaries to explore new possibilities." },
-                { title: "Integrity", desc: "Building trust through honest transparent partnerships." },
-                { title: "Excellence", desc: "Delivering the highest quality in every line of code." },
-                { title: "Customer Success", desc: "Your growth is the real measure of our success." },
-                { title: "Continuous Learning", desc: "Constantly evolving with emerging technologies." }
-              ].map((val, i) => (
-                <li key={i} className="flex gap-4">
-                  <div className="mt-1">
-                    <CheckCircle className="text-primary-yellow" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg text-charcoal">{val.title}</h4>
-                    <p className="text-gray-600">{val.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <div className="h-48 overflow-hidden">
+               <img 
+                 src={aboutImage}
+                 alt="Our Office Environment"
+                 referrerPolicy="no-referrer"
+                 className="w-full h-full object-cover"
+               />
+            </div>
+            <div className="p-10 lg:p-12 pt-8">
+                <h3 className="text-2xl font-bold mb-8 text-charcoal">Core Values</h3>
+                <ul className="space-y-6">
+                {[
+                    { title: "Innovation", desc: "Pushing boundaries to explore new possibilities." },
+                    { title: "Integrity", desc: "Building trust through honest transparent partnerships." },
+                    { title: "Excellence", desc: "Delivering the highest quality in every line of code." },
+                    { title: "Customer Success", desc: "Your growth is the real measure of our success." },
+                    { title: "Continuous Learning", desc: "Constantly evolving with emerging technologies." }
+                ].map((val, i) => (
+                    <li key={i} className="flex gap-4">
+                    <div className="mt-1">
+                        <CheckCircle className="text-primary-yellow" size={24} />
+                    </div>
+                    <div>
+                        <h4 className="font-bold text-lg text-charcoal">{val.title}</h4>
+                        <p className="text-gray-600">{val.desc}</p>
+                    </div>
+                    </li>
+                ))}
+                </ul>
+            </div>
           </motion.div>
         </div>
       </section>

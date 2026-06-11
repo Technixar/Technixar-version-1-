@@ -2,6 +2,13 @@ import { CtaSection } from "@/components/CtaSection";
 import * as motion from "motion/react-client";
 import { Code, ShieldCheck, Database, Smartphone, Cloud, Cpu } from "lucide-react";
 
+import softwareImage from '@/assets/images/software_code_image_1781162694890.png';
+import fintechImage from '@/assets/images/fintech_graph_image_1781162710000.png';
+import cloudImage from '@/assets/images/cloud_infra_image_1781162725329.png';
+import mobileAppImage from '@/assets/images/mobile_app_dev_1781162983498.png';
+import webDevImage from '@/assets/images/web_dev_1781163008323.png';
+import aiAutomationImage from '@/assets/images/ai_automation_1781163026426.png';
+
 export default function Services() {
   const services = [
     {
@@ -9,6 +16,7 @@ export default function Services() {
       title: "Custom Software Development",
       description: "Design and build custom enterprise-grade software solutions tailored to your business needs.",
       icon: Code,
+      image: softwareImage,
       features: ["Enterprise Applications", "CRM Systems", "ERP Platforms", "SaaS Products", "Workflow Automation", "Business Intelligence Dashboards"]
     },
     {
@@ -16,6 +24,7 @@ export default function Services() {
       title: "Fintech Solutions",
       description: "Secure, scalable, and compliant financial technology solutions.",
       icon: ShieldCheck,
+      image: fintechImage,
       features: ["Payment Platforms", "Remittance Systems", "Digital Wallets", "KYC & AML Integration", "Open Banking APIs", "Financial Reporting Systems"]
     },
     {
@@ -23,6 +32,7 @@ export default function Services() {
       title: "Mobile App Development",
       description: "Build powerful mobile applications for iOS and Android.",
       icon: Smartphone,
+      image: mobileAppImage,
       features: ["Flutter Development", "React Native", "Native iOS Apps", "Native Android Apps", "Mobile UI/UX Design", "App Maintenance"]
     },
     {
@@ -30,6 +40,7 @@ export default function Services() {
       title: "Web Development",
       description: "Create modern digital experiences that engage users and drive business growth.",
       icon: Database,
+      image: webDevImage,
       features: ["Corporate Websites", "Customer Portals", "E-Commerce Platforms", "Web Applications", "Progressive Web Apps"]
     },
     {
@@ -37,6 +48,7 @@ export default function Services() {
       title: "Cloud & DevOps",
       description: "Build secure and scalable cloud infrastructure.",
       icon: Cloud,
+      image: cloudImage,
       features: ["AWS Solutions", "Microsoft Azure", "Google Cloud", "CI/CD Pipelines", "Docker", "Kubernetes"]
     },
     {
@@ -44,6 +56,7 @@ export default function Services() {
       title: "AI & Automation",
       description: "Leverage artificial intelligence to improve business efficiency.",
       icon: Cpu,
+      image: aiAutomationImage,
       features: ["AI Chatbots", "Document Automation", "Predictive Analytics", "Business Process Automation", "Machine Learning Solutions"]
     }
   ];
@@ -97,9 +110,15 @@ export default function Services() {
                     ))}
                   </ul>
                 </div>
-                <div className="lg:w-1/2 w-full h-80 bg-gray-50 rounded-3xl border border-gray-100 flex items-center justify-center overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-50 opacity-50"></div>
-                  <svc.icon size={120} className="text-gray-200/80" />
+                <div className="lg:w-1/2 w-full h-80 bg-gray-50 rounded-3xl border border-gray-100 flex items-center justify-center overflow-hidden relative group-hover:shadow-2xl transition-all duration-300">
+                  <img 
+                    src={svc.image} 
+                    alt={svc.title} 
+                    referrerPolicy="no-referrer"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent"></div>
+                  <svc.icon size={80} className="text-white/80 absolute bottom-6 right-6" />
                 </div>
               </motion.div>
             ))}

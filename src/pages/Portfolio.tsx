@@ -2,10 +2,13 @@ import { CtaSection } from "@/components/CtaSection";
 import * as motion from "motion/react-client";
 import { ArrowUpRight } from "lucide-react";
 
+import fintechImage from '@/assets/images/portfolio_fintech_1781162831428.png';
+import healthcareImage from '@/assets/images/portfolio_healthcare_1781162847257.png';
+
 export default function Portfolio() {
   const projects = [
-    { title: "Digital Remittance Platform", desc: "Cross-border remittance platform with multi-currency support, KYC verification, and real-time settlements.", category: "Fintech" },
-    { title: "Healthcare Management Portal", desc: "Comprehensive healthcare solution for patient management and telemedicine.", category: "Healthcare" },
+    { title: "Digital Remittance Platform", desc: "Cross-border remittance platform with multi-currency support, KYC verification, and real-time settlements.", category: "Fintech", image: fintechImage },
+    { title: "Healthcare Management Portal", desc: "Comprehensive healthcare solution for patient management and telemedicine.", category: "Healthcare", image: healthcareImage },
     { title: "Enterprise ERP System", desc: "Custom ERP platform streamlining operations and business workflows.", category: "Enterprise" },
     { title: "E-Commerce Marketplace", desc: "Multi-vendor marketplace with secure payments and inventory management.", category: "Web App" },
     { title: "AI Customer Support Platform", desc: "AI-powered customer engagement and support automation solution.", category: "AI & Automation" },
@@ -44,19 +47,31 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group relative bg-white rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col"
+                className="group p-0 bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col"
               >
-                <div className="flex justify-between items-start mb-16">
-                  <span className="bg-gray-100 text-charcoal text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                    {proj.category}
-                  </span>
-                  <button className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-primary-yellow group-hover:bg-charcoal transition-colors">
-                    <ArrowUpRight size={20} />
-                  </button>
-                </div>
-                <div className="mt-auto">
-                  <h3 className="text-2xl font-bold text-charcoal mb-3 pr-8">{proj.title}</h3>
-                  <p className="text-gray-600 leading-relaxed max-w-md">{proj.desc}</p>
+                {proj.image && (
+                    <div className="h-64 overflow-hidden bg-gray-100">
+                        <img 
+                            src={proj.image} 
+                            alt={proj.title} 
+                            referrerPolicy="no-referrer"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                        />
+                    </div>
+                )}
+                <div className={`p-8 flex flex-col flex-1 ${!proj.image && 'pt-24'}`}>
+                    <div className="flex justify-between items-start mb-6">
+                        <span className="bg-gray-100 text-charcoal text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                            {proj.category}
+                        </span>
+                        <button className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-primary-yellow group-hover:bg-charcoal transition-colors">
+                            <ArrowUpRight size={20} />
+                        </button>
+                    </div>
+                    <div className="mt-auto">
+                        <h3 className="text-2xl font-bold text-charcoal mb-3 pr-8">{proj.title}</h3>
+                        <p className="text-gray-600 leading-relaxed max-w-md">{proj.desc}</p>
+                    </div>
                 </div>
               </motion.div>
             ))}
